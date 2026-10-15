@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "packet-tracer-mcp"
+version = "0.1.0"
+description = "Control Cisco Packet Tracer through MCP and native PTMP/IPC, without desktop automation."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{name = "YanamiAnnaForensic"}]
+dependencies = []
+keywords = ["mcp", "cisco", "packet-tracer", "networking", "ptmp"]
+classifiers = ["Programming Language :: Python :: 3", "Operating System :: OS Independent"]
+
+[project.scripts]
+packet-tracer-mcp = "packet_tracer_mcp.__main__:main"
+
+[project.urls]
+Repository = "https://github.com/YanamiAnnaForensic/packet-tracer-mcp"
+Issues = "https://github.com/YanamiAnnaForensic/packet-tracer-mcp/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "packet-tracer": {
+      "command": "python",
+      "args": ["C:/path/to/packet-tracer-mcp/run_server.py", "serve"]
+    }
+  }
+}
