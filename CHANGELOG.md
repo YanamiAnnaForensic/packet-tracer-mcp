@@ -1,5 +1,10 @@
 # Changelog / 更新记录
 
+## 0.1.1 — 2026-10-15
+
+- Write bilingual CLI output in UTF-8 even under ASCII/cp1252 Windows consoles. Add a regression test for the failure observed in GitHub Actions.
+- 即使Windows控制台默认ASCII或cp1252，也使用UTF-8输出双语帮助；添加GitHub Actions发现问题的回归测试。
+
 ## 0.1.0 — 2026-10-15
 
 - Native PTMP/IPC connection and 14 MCP tools, with bilingual descriptions.

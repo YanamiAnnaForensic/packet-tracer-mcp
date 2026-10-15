@@ -13,6 +13,7 @@ from xml.etree import ElementTree as ET
 import zlib
 
 from .config import config_path, state_directory
+from . import __version__
 
 
 def atomic_write(path: Path, data: bytes, private: bool = False) -> None:
@@ -112,7 +113,7 @@ def setup_exapp(pt_home: Path, pt_version: str = "8.0", output_dir: Path | None 
         atomic_write(credentials, json.dumps(data, indent=2).encode("utf-8"), private=True)
     manifest = output / "packet-tracer-mcp.pta"
     document = ET.Element("PT_APP_META")
-    values = {"PT_VERSION": pt_version, "IPC_VERSION": "1.0", "NAME": "Packet Tracer MCP", "VERSION": "0.1.0",
+    values = {"PT_VERSION": pt_version, "IPC_VERSION": "1.0", "NAME": "Packet Tracer MCP", "VERSION": __version__,
               "ID": data["app_id"], "DESCRIPTION": "Native topology, IOS and connectivity tools over MCP.",
               "AUTHOR": "YanamiAnnaForensic", "CONTACT": "", "EXECUTABLE_PATH": sys.executable, "KEY": data["secret"]}
     for key, value in values.items():

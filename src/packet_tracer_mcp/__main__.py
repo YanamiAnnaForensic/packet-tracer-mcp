@@ -9,6 +9,11 @@ from .setup import register_user_config, setup_exapp
 
 
 def main() -> None:
+    # Windows CI and redirected consoles may default to ASCII/cp1252. The CLI
+    # contains Chinese text; MCP itself always writes UTF-8 to the binary stream.
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(encoding="utf-8", errors="backslashreplace")
     parser = argparse.ArgumentParser(description="Packet Tracer MCP / Packet Tracer原生接口MCP服务")
     subs = parser.add_subparsers(dest="command")
     subs.add_parser("serve", help="Run the MCP stdio service (default). / 启动MCP服务。")

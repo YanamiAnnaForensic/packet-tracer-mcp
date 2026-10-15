@@ -4,9 +4,9 @@ Release preparation date: **2026-10-15**. / 发布前验证日期：**2026-10-15
 
 ## Automated checks / 自动检查
 
-18 tests passed using `python -m unittest discover -s tests -v` on Windows with Python 3.13. Tests use a local fake TCP peer and an isolated MCP backend, so contributors can run them without Cisco software or real credentials.
+19 tests passed using `python -m unittest discover -s tests -v` on Windows with Python 3.13, including a CLI regression check with ASCII output forced. Tests use a local fake TCP peer and an isolated MCP backend, so contributors can run them without Cisco software or real credentials.
 
-Windows、Python 3.13环境下18项测试通过。协议测试使用本地模拟TCP端，MCP测试使用隔离后端，无须安装Cisco程序或提供实际凭据。
+Windows、Python 3.13环境下19项测试通过，包含强制ASCII输出环境的CLI回归验证。协议测试使用本地模拟TCP端，MCP测试使用隔离后端，无须安装Cisco程序或提供实际凭据。
 
 Checks include fragmented PNG byte vectors containing NUL/non-UTF-8 bytes, Unicode arguments, challenge authentication, IPC errors, EOF during payload reads, wrong response IDs, oversized frames, PT.conf round trips/backup/idempotence/unregistration, JSON-RPC initialization, tool validation and image content.
 
